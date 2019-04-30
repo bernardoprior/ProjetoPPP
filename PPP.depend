@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1556624152 source:c:\users\bernardo\documents\dev\ppp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"users.h"
+
+1556621893 c:\users\bernardo\documents\dev\ppp\users.h
+
