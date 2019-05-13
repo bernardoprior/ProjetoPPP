@@ -1,0 +1,243 @@
+6 Coimbra
+Museu Nacional De Machado de Castro
+08|30|19|30|Museu de Historia
+Museu Da Ciencia
+08|30|19|30|Museu de Ciencia
+Jardim Da Sereia
+00|00|00|00|Jardim
+Jardim Botanico
+00|00|00|00|Jardim botanico
+Portugal Do Pequeninos
+09|00|18|30|Parque ludico para Criancas
+Moelas
+20|30|04|30|Bar
+6 Viseu
+Museu De Grao Vasco
+09|30|18|30|Museu de Historia
+Fontelo
+00|00|00|00|Parque Natural
+Parque Aquilino Ribeiro
+07|00|23|30|Parque Natural
+Ice Club
+23|30|07|30|Clube Noturno
+Bar Do Xico
+20|30|03|30|Bar
+Bica da Se
+20|30|04|30|Bar
+8 Porto
+Museu Nacional Soares dos Reis
+08|30|19|30|Museu de Historia
+Museu FC Porto
+08|30|19|30|Museu de Desporto
+Jardim Botanico
+00|00|00|00|Jardim botanico
+Eskada
+23|30|07|30|Clube Noturno
+Piolho
+20|30|04|30|Bar
+Kasa Da Praia
+23|30|07|30|Clube Noturno
+Jardim Do Palacio De Cristal
+00|00|00|00|Jardim
+Parques De Serralves
+00|00|00|00|Parque Natural
+5 Madrid
+Museu Do Prado
+08|30|18|30|Museu de Arte
+Museu Naval De Madrid
+09|30|20|30|Museu de Barcos
+Parque Warner Madrid
+07|00|23|30|Parque Tematico
+Parque De Santander
+07|00|23|30|Parque Natural
+Hard Rock Cafe
+10|30|23|30|Cafe
+5 Lisboa
+Museu Nacional Dos Coches
+09|30|18|30|Museu de Automoveis
+Arco Do Cego
+00|00|00|00|Parque Natural
+Parque Eduardo VII Do Reino Unido
+07|00|23|30|Parque Natural
+Jardim Zoologico De Queluz
+07|00|23|30|Jardim Zoologico
+Hard Rock Cafe
+10|30|02|30|Cafe
+9 Praga
+City Of Prague Museum
+09|00|19|30|Museu de Historia
+Museu Do Comunismo
+12|30|20|30|Museu de Historia
+Museu Das Sanitas E Penicos históricos
+07|30|15|30|Museu de Utencilios
+Museu Das Máquinas Sexuais
+10|30|18|50|Museu de Sexo
+Chotkovy Gardens
+00|00|00|00|Parque Natural
+Aquacentrum Sutka
+08|30|18|30|Parque Aquatico
+Black Angel’s Bar
+20|30|04|30|Bar
+The Bourbon Bar Prague
+21|30|03|30|Bar
+Hard Rock Cafe
+10|30|02|30|Cafe
+5 Barcelona
+Hard Rock Cafe
+10|30|02|30|Cafe
+Mikkeller Bar Barcelona
+20|30|04|30|Bar
+Joan Miro Fundation
+00|00|00|00|Parque Natural
+Museu De Arte Contemporanea De Barcelona
+12|30|20|30|Museu de Arte
+Casa Museu Gaudí
+12|30|20|30|Museu de Cultura
+6 Sevilha
+Museu De Belas-Artes
+12|30|20|30|Museu de Arte
+Museu De Dança Flamenca
+12|30|20|30|Museu de Arte
+Groucho Bar
+20|30|04|30|Bar
+Hard Rock Cafe
+10|30|02|30|Cafe
+Parque De Maria Luisa
+00|00|00|00|Parque Natural
+Isla Magica
+08|30|18|30|Parque de Diversões
+9 Paris
+Hard Rock Cafe
+10|30|02|30|Cafe
+Harry's New York Bar
+10|30|02|30|Bar
+Ice Kube Bar
+20|30|04|30|Bar
+Parc Monceau
+00|00|00|00|Parque Natural
+DisneyLand Paris
+00|00|00|00|Parque tematico
+AquaBoulevard
+08|30|18|30|Parque aquatico
+Museu Do Louvre
+06|30|18|30|Museu de Arte
+Musee Rodin
+13|30|19|30|Museu de Escultura
+Museu Picasso
+11|30|23|30|Museu de Arte
+7 Viena
+Vienna Park
+8|00|20|00|Parque Natural
+Stadpark
+00|00|00|00|Parque Natural
+Museu De História da Arte em Viena
+06|30|18|30|Museu de Arte
+Vienna Museum
+13|30|19|30|Museu de Historia
+Leopold Museum
+11|30|23|30|Museu de Arte
+American Bar
+21|30|03|30|Bar
+Onyx Bar
+22|30|02|30|Bar
+3 Atenas
+Museu Da Acropole
+06|30|18|30|Museu Arqueologico
+Museu De Arte Cicladica
+11|30|23|30|Museu de Arte
+Tiki Bar Athens
+21|30|03|30|Bar
+9 Roma
+Hard Rock Cafe
+10|30|02|30|Cafe
+Colosseum Pub Crawl
+15|15|02|30|Bar
+Jardins Da Villa Borghese
+00|00|00|00|Parque Natural
+Villa Doria Pamphilj
+00|00|00|00|Parque Natural
+Parque Do Gianicolo
+0|00|00|00|Parque Natural
+Capela Sistina
+07|30|23|30|Capela
+Museus Vaticanos
+07|00|22|30|Museu de Historia
+Museu Nacional Romano
+08|30|20|30|Museu de Historia
+Museus Capitolinos
+09|30|21|00|Museu de Religiao
+6 Veneza
+Hard Rock Cafe
+10|30|02|30|Cafe
+Chet Bar
+10|30|02|30|Bar
+Harry's Bar
+10|30|02|30|Bar
+Veneza Water Park
+08|30|18|30|Parque Aquatico
+Giardini Papadopoli
+00|00|00|00|Parque Natural
+Museu Correr
+08|30|20|30|Museu de Historia
+8 Amsterdao
+Barney's Coffeeshop Amsterdam
+16|20|04|20|Coffeeshop
+Popey Coffeshop
+16|20|04|20|Coffeeshop
+Greenhouse Effect Coffeeshop
+16|20|04|20|Coffeeshop
+The Bulldog The First Coffeeshop
+16|20|04|20|Coffeeshop
+Abraxas Coffeeshop
+16|20|04|20|Coffeeshop
+Smoke Palace
+16|20|04|20|Coffeeshop
+Vondelpark
+00|00|00|00|Parque Natural
+Museu Van Gogh
+08|30|20|30|Museu de Historia
+6 Estocolmo
+Hard Rock Cafe
+10|30|02|30|Cafe
+Museu Nordico
+08|30|20|30|Museu de Cultura
+Museu Sueco de História Natural
+09|30|18|30|Museu de Historia
+Museu Nobel
+10|00|22|30|Museu de Ciencia
+Royal National City Park
+00|00|00|00|Parque Natural
+Ivar Los park
+08|30|22|00|Parque Natural
+5 Copenhaga
+Hard Rock Cafe
+10|30|02|30|Cafe
+Pub Crawl Copenhagen
+18|30|04|00|Bar
+Museu Nobel
+10|00|20|30|Museu de Ciencia
+Royal National City Park
+10|00|00|00|Parque Natural
+Museu Nacional De Arte da Dinamarca
+9|00|18|00|Museu de Cultura
+10 Londres
+Hard Rock Cafe
+10|30|02|30|Cafe
+Buddha-Bar London
+18|30|04|00|Bar
+Gordon's Wine Bar
+10|30|18|00|Bar
+Retro Bar
+21|30|04|15|Bar
+Museu De Londres
+10|30|18|00|Museu de Cultura
+Science Museum
+14|15|19|30|Museu de Ciencia
+Madame Tussauds London
+09|00|18|00|Museu de Cera
+Green Park
+10|00|23|30|Parque Natural
+Greenwich Park
+00|00|00|00|Parque Natural
+Archbishop's Park
+07|00|00|30|Parque Natural

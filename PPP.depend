@@ -1,9 +1,17 @@
 # depslib dependency file v1.0
-1556624152 source:c:\users\bernardo\documents\dev\ppp\main.c
+1557714337 source:c:\users\bernardo\documents\dev\ppp\main.c
+	"header.h"
+
+1556644209 c:\users\bernardo\documents\dev\ppp\users.h
+
+1557509628 source:c:\users\bernardo\documents\dev\ppp\locais.c
+	"header.h"
+
+1557714326 c:\users\bernardo\documents\dev\ppp\header.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
-	"users.h"
 
-1556621893 c:\users\bernardo\documents\dev\ppp\users.h
+1557714460 source:c:\users\bernardo\documents\dev\ppp\users.c
+	"header.h"
 

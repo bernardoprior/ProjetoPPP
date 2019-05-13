@@ -31,7 +31,17 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="fichTxtproj.txt" />
+		<Unit filename="header.h" />
+		<Unit filename="locais.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="pessoas.txt" />
+		<Unit filename="titulo.txt" />
+		<Unit filename="users.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>

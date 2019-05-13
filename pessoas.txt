@@ -1,1 +1,17 @@
-bernardo|rua da boa nova|2000|3|17|123|
+2
+bernardo|2|2|2|2|929492349|
+Porto|Barcelona|Coimbra|
+5
+Moelas|
+Portugal Do Pequeninos|
+Jardim Botanico|
+Jardim Do Palacio De Cristal|
+Abraxas Coffeeshop|
+Moelas|
+hola|123|123|123|123|123|
+Coimbra|Viseu|Porto|
+3
+Moelas|
+Portugal Do Pequeninos|
+Kasa Da Praia|
+(null)|
