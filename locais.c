@@ -31,7 +31,7 @@ Llocais le_locais (void){
     FILE* f;
     temp = NULL;
     f = fopen("fichTxt.txt","r");
-    for(i=0; i<16; i++){
+    for(i=0; i<20; i++){
         fflush(stdin);
         local = (Llocais)malloc(sizeof(LocaisNo));
         local->next = NULL;
@@ -61,6 +61,43 @@ Llocais le_locais (void){
 
     }
     return lista_todos;
+}
+
+Ldist le_distancias(Llocais locais){
+    Ldist lista = NULL;
+    int i;
+    char temporario[SIZE_LINHA],local1[SIZE],local2[SIZE];
+    FILE* f;
+    Ldist no;
+    f = fopen("distancias.txt","r");
+    for(i=0;i<190;i++){
+        no = (Ldist)malloc(sizeof(Dist));
+        fflush(stdin);
+        fgets(temporario,sizeof(temporario),f);
+        sscanf(temporario,"%[^|]|%[^|]|%d|",local1,local2,&(no->distancia));
+        no->local1 = procura_lista(locais,local1);
+        no->local2 = procura_lista(locais,local2);
+        no->next = NULL;
+        lista = insere_dist(lista,no);
+    }
+    return lista;
+
+}
+
+Ldist insere_dist(Ldist lista, Ldist novo){
+    Ldist temp;
+    Ldist ant = NULL;
+    temp = lista;
+    while(temp){
+        ant = temp;
+        temp = temp->next;
+    }
+    if(ant == NULL)
+        lista = novo;
+    else{
+        ant->next = novo;
+    }
+    return lista;
 }
 
 
@@ -490,5 +527,18 @@ int verifica_hot_em_local(Lpdi hot, Llocais local){
         temp = temp->next;
     }
     return 0;
+}
+
+double conta_pdis_pop_total(Luser users){
+    Luser temp;
+    double contador = 0;
+    temp = users;
+    while(temp){
+        contador = contador + temp->npref;
+        temp = temp->next;
+    }
+    return contador;
 
 }
+
+

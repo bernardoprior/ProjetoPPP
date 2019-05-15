@@ -1,5 +1,0 @@
-FALTA ADICIONAR
-protecao datas bissextos e 30/31
-protecao numero de telefone para ter 9 digitos
-
-PODEMOS ADICIONAR DISTANCIAS COMO EXTRA FALAR AMANHA COM STORA

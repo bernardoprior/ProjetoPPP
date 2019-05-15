@@ -1,17 +1,14 @@
-2
-bernardo|2|2|2|2|929492349|
-Porto|Barcelona|Coimbra|
-5
-Moelas|
-Portugal Do Pequeninos|
-Jardim Botanico|
-Jardim Do Palacio De Cristal|
-Abraxas Coffeeshop|
-Moelas|
-hola|123|123|123|123|123|
-Coimbra|Viseu|Porto|
 3
-Moelas|
-Portugal Do Pequeninos|
-Kasa Da Praia|
+bernardo|rua da |1|1|1|914919343|
+Amsterdao|Barcelona|Bratislava|
+1
+Abraxas Coffeeshop|
+(null)|
+a|123|1|1|1|914919343|
+Estocolmo|Bratislava|Berlim|
+0
+(null)|
+ola|rua da |2016|2|29|123456789|
+(null)|(null)|(null)|
+0
 (null)|

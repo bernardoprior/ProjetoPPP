@@ -9,13 +9,15 @@ int main(){
 void menu(){
     int numero_users,escolha;
     char login_char;
-    Luser lista_users;
-    Luser user_login;
-    Llocais listalocais = (Llocais)malloc(sizeof(LocaisNo));
+    Luser lista_users = NULL;
+    Luser user_login = NULL;
+    Llocais listalocais = NULL;
+    Ldist lista_distancias = NULL;
 
     /*LE FICHEIROS*/
     listalocais = le_locais(); /*CRIAR UMA LISTA LIGADA COM TODOS OS LOCAIS*/
     lista_users = le_users(listalocais,&numero_users); /*CRIAR UMA LISTA COM TODOS OS USUARIOS*/
+    lista_distancias = le_distancias(listalocais);/*CRIA UMA LISTA COM AS DISTANCIAS*/
 
     escreve_titulo();
     printf("\n\n\n\t\t\t\t\t\t\t BEM VINDO AO PLANEAMENTO DE VIAGENS \n");
@@ -35,7 +37,7 @@ void menu(){
 
 
     if(login_char=='r' || login_char == 'R'){
-        /*user_login = registo(lista_users);*/
+        lista_users = registo(lista_users,&user_login);
     }
 
 
@@ -45,114 +47,67 @@ void menu(){
     }
     }while(!user_login);
 
-    while (escolha!=6){
+    while (escolha!=6 && user_login->ano != -1){
 
-    system("@cls||clear\n");
-    escreve_titulo();
+        system("@cls||clear\n");
+        escreve_titulo();
 
-    printf("\n\n   USER: %s\t\tLOCAL PREF 1: %s\t\tLOCAL PREF 2: %s\t\tLOCAL PREF 3: %s\tHOT: %s  \n\n\t\t\t\t\t\t\t                MENU \n\n\n\n",user_login->nome,printa_local_menu(user_login->local1),printa_local_menu(user_login->local2),printa_local_menu(user_login->local3),printa_hot_menu(user_login->hot));
-    printf("\t\t\t\tListagem de Locais e Pontos de Interesse (Ordem Alfabetica) ------------------> (insira 1)\n\n\n\n");
-    printf("\t\t\t\tDefinir ou Alterar Preferencias ----------------------------------------------> (insira 2) \n\n\n\n");
-    printf("\t\t\t\tOrdenar os Destinos por Popularidade -----------------------------------------> (insira 3)  \n\n\n\n");
-    printf("\t\t\t\tGerar uma viagem -------------------------------------------------------------> (insira 4)\n\n\n\n");
-    printf("\t\t\t\tDefinicoes de conta ----------------------------------------------------------> (insira 5)\n\n\n\n");
-    printf("\t\t\t\tSair -------------------------------------------------------------------------> (insira 6)\n\n\n\n");
-    do{
-        fflush(stdin);
-        scan_int_prot(&escolha);
+        printf("\n\n   USER: %s\t\tLOCAL PREF 1: %s\t\tLOCAL PREF 2: %s\t\tLOCAL PREF 3: %s\tHOT: %s  \n\n\t\t\t\t\t\t\t                MENU \n\n\n\n",user_login->nome,printa_local_menu(user_login->local1),printa_local_menu(user_login->local2),printa_local_menu(user_login->local3),printa_hot_menu(user_login->hot));
+        printf("\t\t\t\tListagem de Locais e Pontos de Interesse (Ordem Alfabetica) ------------------> (insira 1)\n\n\n\n");
+        printf("\t\t\t\tDefinir ou Alterar Preferencias ----------------------------------------------> (insira 2) \n\n\n\n");
+        printf("\t\t\t\tOrdenar os Destinos por Popularidade -----------------------------------------> (insira 3)  \n\n\n\n");
+        printf("\t\t\t\tGerar uma viagem -------------------------------------------------------------> (insira 4)\n\n\n\n");
+        printf("\t\t\t\tDefinicoes de conta ----------------------------------------------------------> (insira 5)\n\n\n\n");
+        printf("\t\t\t\tSair -------------------------------------------------------------------------> (insira 6)\n\n\n\n");
+        do{
+            fflush(stdin);
+            scan_int_prot(&escolha);
 
-    }while(!(escolha>0 && escolha<=6));
+        }while(!(escolha>0 && escolha<=6));
 
-    if (escolha == 1){
-        listalocais = sort_locais_alfabetica(listalocais);
-        mostra_locais_e_pdis(listalocais,1);
-        printf("\n\n\n");
-        system("Pause");
+        if (escolha == 1){
+            listalocais = sort_locais_alfabetica(listalocais);
+            mostra_locais_e_pdis(listalocais,1);
+            printf("\n\n\n");
+            system("Pause");
+        }
+
+        if (escolha == 2){
+            listalocais = sort_locais_alfabetica(listalocais);
+            menu_altera_prefs(user_login,listalocais);
+            printf("\n\n");
+            system("Pause");
+        }
+
+        if (escolha==3){
+            listalocais = sort_locais_pop(listalocais);
+            mostra_locais_e_pdis(listalocais,0);
+            printf("\n\n");
+            system("Pause");
+        }
+        if(escolha==4){
+            listalocais = sort_locais_pop(listalocais);
+            gera_viagem(listalocais,user_login,lista_users,lista_distancias);
+            printf("\n\n");
+            system("Pause");
+        }
+        if(escolha==5){
+            menu_conta(user_login);
+            printf("\n\n");
+            system("Pause");
+        }
     }
 
-    if (escolha == 2){
-        listalocais = sort_locais_alfabetica(listalocais);
-        menu_altera_prefs(user_login,listalocais);
-        printf("\n\n");
-        system("Pause");
-    }
-
-    if (escolha==3){
-        listalocais = sort_locais_pop(listalocais);
-        mostra_locais_e_pdis(listalocais,0);
-        printf("\n\n");
-        system("Pause");
-    }
-    if(escolha==4){
-        listalocais = sort_locais_pop(listalocais);
-        gera_viagem(listalocais,user_login);
-        printf("\n\n");
-        system("Pause");
-    }
-
-    }
-
-      /*  case 2:
-            break;
-
-        case 3:
-
-            break;
-
-        case 4:
-            break;
-
-        case 5:
-            escreve_titulo();
-            printf("\n\n\n\t\t\t\tUsername:  %s", user_login->nome);
-            printf("\n\n\n\t\t\t\tMorada:  %s", user_login->morada);
-            printf("\n\n\n\t\t\t\tData de nascimento:  %d-%d-%d", user_login->dia,user_login->mes,user_login->ano);
-            printf("\n\n\n\t\t\t\t\t\t\t                MENU \n\n\n\n");
-            printf("\t\t\t\tAlterar morada ---------------------------------------------------------------> (insira 1)\n\n\n\n");
-            printf("\t\t\t\tAlterar data de nascimento ---------------------------------------------------> (insira 2) \n\n\n\n");
-            printf("\t\t\t\tAlterar numero de telemovel --------------------------------------------------> (insira 3)  \n\n\n\n");
-            printf("\t\t\t\tEliminar conta ---------------------------------------------------------------> (insira 4)\n\n\n\n");
-            printf("ESCOLHA: ");
-            scanf("%d",&escolha);
-            switch(escolha){
-            case 1:
-                printf("\t\t\tInsira a nova morada: \n\t\t\t>>>");
-                fflush(stdin);
-                scanf(" %[^\n]s",user_login->morada);
-                break;
-
-            case 2:
-                printf("\t\t\tInsira o ano em que nasceu: \n\t\t\t>>>");
-                fflush(stdin);
-                scanf("%d",&user_login->ano);
-                printf("\t\t\tInsira o mes do ano em que nasceu: \n\t\t\t>>>");
-                scanf("%d",&user_login->mes);
-                printf("\t\t\tInsira o dia do mes do ano em que nasceu: \n\t\t\t>>>");
-                scanf("%d",&user_login->dia);
-                break;
-
-            case 3:
-                printf("\t\t\tInsira o seu numero de telefone: \n\t\t\t>>>");
-                scanf("%s",user_login->numero);
-                break;
-            case 4:
-                user_login->ano = -1;
-                printf("Conta eliminada");
-            }
-
-
-    }
-    printf("%s %s %d %d %d %s \n",lista_users[1].nome,lista_users[1].morada,lista_users[1].ano,lista_users[1].mes,lista_users[1].dia,lista_users[1].numero);
-    */
 
     escreve_users(lista_users,numero_users);
-    mostra_locais_e_pdis(listalocais,1);
-    system("Pause");
+    free_listas(listalocais,lista_users);
+    if(user_login->ano!=-1)
+        system("Pause");
 }
 
 
 void mostra_locais_e_pdis(Llocais lista,int alfabetica){
-    int /*i=1,*/aux=1/*,escolha,*/,n_local;
+    int aux=1,n_local;
     Llocais temp = lista;
     system("@cls||clear\n");
     escreve_titulo();
@@ -168,27 +123,6 @@ void mostra_locais_e_pdis(Llocais lista,int alfabetica){
         temp = temp->next;
         aux++;
     }
-
-
-    /*
-    while(temp){
-        printf("\t\t\t%d.   %s POPULARIDADE:%d\n\n",i,temp->nome,temp->pop);
-        temp = temp->next;
-        i++;
-    }
-    fflush(stdin);
-    scan_int_prot(&escolha);
-    while(!(escolha>=1 && escolha<i)){
-        fflush(stdin);
-        scan_int_prot(&escolha);
-    }
-
-    aux = 1;
-    temp = lista;
-    while(aux!=escolha){
-        temp = temp->next;
-        aux++;
-    }*/
     printaListaPdi(temp->pdis);
 
 }
@@ -256,7 +190,10 @@ void menu_altera_locais(User* user,Llocais locais){
     if (opcao==1 && modifica_local_pref(user,opcao2,locais)!=NULL){
         if(user->local1 != NULL)
             user->local1->pop--;
-        printf("\n\n\t\t\t%s ---> ",user->local1->nome);
+        if(user->local1==NULL)
+             printf("\n\n\t\t\tINDEFINIDO ---> ");
+        else
+            printf("\n\n\t\t\t%s ---> ",user->local1->nome);
         user->local1=modifica_local_pref(user,opcao2,locais);
         printf("%s -ALTERADO COM SUCESSO\n\n",user->local1->nome);
         user->local1->pop++;
@@ -264,7 +201,10 @@ void menu_altera_locais(User* user,Llocais locais){
     else if (opcao==2 && modifica_local_pref(user,opcao2,locais)!=NULL){
         if(user->local2 != NULL)
             user->local2->pop--;
-        printf("\n\n\t\t\t%s ---> ",user->local2->nome);
+        if(user->local2 == NULL)
+             printf("\n\n\t\t\tINDEFINIDO ---> ");
+        else
+            printf("\n\n\t\t\t%s ---> ",user->local2->nome);
         user->local2=modifica_local_pref(user,opcao2,locais);
         printf("%s -ALTERADO COM SUCESSO\n\n",user->local2->nome);
         user->local2->pop++;
@@ -273,7 +213,10 @@ void menu_altera_locais(User* user,Llocais locais){
     {
         if(user->local3 != NULL)
             user->local3->pop--;
-        printf("\n\n\t\t\t%s ---> ",user->local3->nome);
+        if(user->local3 == NULL)
+             printf("\n\n\t\t\tINDEFINIDO ---> ");
+        else
+            printf("\n\n\t\t\t%s ---> ",user->local3->nome);
         user->local3=modifica_local_pref(user,opcao2,locais);
         printf("%s -ALTERADO COM SUCESSO\n\n",user->local3->nome);
         user->local3->pop++;
@@ -440,24 +383,33 @@ void escreve_titulo(){
      fclose(f);
 }
 
-void gera_viagem(Llocais locais,User* user){
+void gera_viagem(Llocais locais,Luser user,Luser lista, Ldist dist){
+    double numero_hots = 0.0;
+    double total_pdi_pop_inc = 0;
+    double avaliacao = 0;
     system("@cls||clear\n");
     printf("\n\n\n\t\t\t\t\t\t\t\t\t            VIAGEM\n");
     if(user->local1 == NULL || user->local2 == NULL || user->local3 == NULL)
-        printf("\n\n\n\t\t\tFALTA DEFENIR UM DOS LOCAIS PREFERIDOS\n\n");
+        printf("\n\n\n\t\t\t---FALTA DEFENIR PELO MENOS UM DOS LOCAIS PREFERIDOS\n\n");
     else{
+        printf("\t\t\t\t\t\t\t\t\tDISTANCIA TOTAL VIAGEM: %d KM\n",procura_distancias(user->local1,user->local2,dist)+procura_distancias(user->local2,user->local3,dist));
+        printf("\t\t\t\t\t\t       %s----%d KM---->%s----%d KM---->%s\n\n\n",user->local1->nome,procura_distancias(user->local1,user->local2,dist),user->local2->nome,procura_distancias(user->local2,user->local3,dist),user->local3->nome);
 
-        printf("\t\t\t\t\t\t\t\t       %s------>%s------>%s\n\n\n",user->local1->nome,user->local2->nome,user->local3->nome);
         printf("\t\t\t-%s\n\n",user->local1);
-        gera_pdis(user->local1,user);
+        gera_pdis(user->local1,user,&total_pdi_pop_inc,&numero_hots);
         printf("\t\t\t-%s\n\n",user->local2);
-        gera_pdis(user->local2,user);
+        gera_pdis(user->local2,user,&total_pdi_pop_inc,&numero_hots);
         printf("\t\t\t-%s\n\n",user->local3);
-        gera_pdis(user->local3,user);
+        gera_pdis(user->local3,user,&total_pdi_pop_inc,&numero_hots);
+        if(conta_pdis_pop_total(lista)==0)/*PERGUNTAR OQ FAZER NISTO*/
+            avaliacao = (user_contagem_avaliacao(lista,user->local1,user->local2,user->local3) + numero_hots/conta_users(lista)*100 + total_pdi_pop_inc/1*100)/3;
+        else
+            avaliacao = (user_contagem_avaliacao(lista,user->local1,user->local2,user->local3) + numero_hots/conta_users(lista)*100 + total_pdi_pop_inc/conta_pdis_pop_total(lista)*100)/3;
+        printf("AVALIACAO: %0.2f %%",avaliacao);
     }
 }
 
-void gera_pdis(Llocais local, User* user){
+void gera_pdis(Llocais local, User* user,double* total_pdi_pop_inc,double* numero_hots){
     int contador = 0;
     Lpdi temp,pdi1=NULL,pdi2=NULL,pdi3=NULL;
     if(user->hot != NULL){
@@ -505,11 +457,111 @@ void gera_pdis(Llocais local, User* user){
         }
         temp = temp->next;
     }
+    *total_pdi_pop_inc = *total_pdi_pop_inc + pdi1->pop + pdi2->pop + pdi3->pop;
+    *numero_hots = *numero_hots + pdi1->n_hot + pdi2->n_hot + pdi3->n_hot; /*devolve segundo ponto da avialacao*/
 
 }
 
 int verifica_repetido_viagem(Lpdi pdi1,Lpdi pdi2,Lpdi pdi3, Lpdi pdi){
     if(pdi==pdi1 || pdi==pdi2 || pdi==pdi3)
         return 1;
+    return 0;
+}
+
+void free_listas(Llocais locais, Luser users, Ldist dist){
+    Luser temp_user,aux_user;
+    Llocais temp_local,aux_local;
+    Lpref temp_pref,aux_pref;
+    Lpdi temp_pdi,aux_pdi;
+    Ldist temp_dist, aux_dist;
+    temp_user = users;
+    temp_local = locais;
+    temp_dist = dist;
+    while(dist){
+
+    }
+    while(temp_user){
+        temp_pref = temp_user->pref;
+        while(temp_pref){
+            aux_pref = temp_pref->next;
+            free(temp_pref);
+            temp_pref = aux_pref;
+        }
+
+        aux_user = temp_user->next;
+        free(temp_user);
+        temp_user = aux_user;
+    }
+    while(temp_local){
+        temp_pdi = temp_local->pdis;
+        while(temp_pdi){
+            aux_pdi = temp_pdi->next;
+            free(temp_pdi);
+            temp_pdi = aux_pdi;
+        }
+        aux_local = temp_local->next;
+        free(temp_local);
+        temp_local = aux_local;
+    }
+}
+
+void menu_conta(Luser user){
+    int escolha;
+    system("@cls||clear\n");
+    escreve_titulo();
+
+    printf("\n\n\t\t\t\tUsername:  %s", user->nome);
+    printf("\n\n\t\t\t\tMorada:  %s", user->morada);
+    printf("\n\n\t\t\t\tData de nascimento:  %d-%d-%d", user->dia,user->mes,user->ano);
+    printf("\n\n\n\t\t\t\t\t\t\t                MENU \n\n\n\n");
+    printf("\t\t\t\tAlterar morada ---------------------------------------------------------------> (insira 1)\n\n\n\n");
+    printf("\t\t\t\tAlterar data de nascimento ---------------------------------------------------> (insira 2) \n\n\n\n");
+    printf("\t\t\t\tAlterar numero de telemovel --------------------------------------------------> (insira 3)  \n\n\n\n");
+    printf("\t\t\t\tEliminar conta ---------------------------------------------------------------> (insira 4)\n\n\n\n");
+    protege_escolhas(&escolha,4);
+
+    if(escolha==1){
+        printf("\n\t\t\tInsira a nova morada: \n\t\t\t>>>");
+        fflush(stdin);
+        scanf(" %[^\n]s",user->morada);
+    }
+    if (escolha==2){
+        do{
+            fflush(stdin);
+            printf("\n\t\t\tInsira o ano em que nasceu:\n");
+            scan_int_prot(&(user->ano));
+            printf("\t\t\tInsira o mes do ano em que nasceu:\n");
+            scan_int_prot(&(user->mes));
+            printf("\t\t\tInsira o dia do mes do ano em que nasceu:\n");
+            scan_int_prot(&(user->dia));
+            if(data_valida(user->dia,user->mes,user->ano)==0)
+                printf("\n\t\t\t--->DATA INVALIDA");
+        }while(data_valida(user->dia,user->mes,user->ano)==0);
+    }
+
+    if(escolha==3){
+        do{
+            printf("\t\t\tInsira o seu numero de telefone:\n\t\t\t>>>");
+            scanf("%s",user->numero);
+            if(strlen(user->numero)!=9)
+                printf("\n\t\t\t--->NUMERO INVALIDO\n");
+        }while(strlen(user->numero)!=9);
+    }
+
+    if(escolha==4){
+        printf("\n\n\n\t\t\t--->CONTA APAGADA\n\n\n");
+        user->ano = -1;
+    }
+
+}
+
+
+int procura_distancias(Llocais local1,Llocais local2, Ldist dist){
+    Ldist temp = dist;
+    while(temp){
+        if ((temp->local1 == local1 && temp->local2 == local2) || (temp->local1 == local2 && temp->local2 == local1))
+            return temp->distancia;
+        temp = temp->next;
+    }
     return 0;
 }

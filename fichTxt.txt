@@ -241,3 +241,25 @@ Greenwich Park
 00|00|00|00|Parque Natural
 Archbishop's Park
 07|00|00|30|Parque Natural
+3 Bruges
+Choco-Story
+11|30|23|30|Museu de Arte
+Le Trappiste
+16|30|03|30|Bar
+The Vintage
+12|15|23|30|Bar
+3 Bratislava
+Castelo De Bratislava
+10|30|18|00|Museu de Cultura
+Catedral De S. Martinho
+10|30|18|00|Museu de Cultura
+Michael's Gate
+10|00|20|30|Museu de Cultura
+3 Berlim
+East Side Gallery
+10|30|18|00|Museu
+Hard Rock Cafe
+10|30|02|30|Cafe
+Portão De Brandemburgo
+10|30|18|00|Museu
+
